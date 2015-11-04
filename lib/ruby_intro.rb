@@ -14,10 +14,7 @@ end
 
 def sum_to_n? arr, n
   return false if arr.empty?
-  arr.permutation(2).each do |p|
-    return true if p.reduce(:+) == n
-  end
-  false
+  arr.permutation(2).any?  { |p| p.reduce(:+) == n }
 end
 
 # Part 2
